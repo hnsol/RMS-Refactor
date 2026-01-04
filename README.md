@@ -1,5 +1,7 @@
 # RMS-Refactor
 
+![260104_readme_header](https://github.com/user-attachments/assets/711181d0-25b0-4d29-80f4-e18d8b253bb2)
+
 ### Relationship Management Skills: A Modern Guide
 対人関係管理スキル（RMS）の再構成とオープンソース化
 
