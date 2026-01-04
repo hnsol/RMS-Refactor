@@ -1,3 +1,3 @@
 module.exports = {
-  themeSet: "./themes",
+  themeSet: ["./themes/GaiaMiniMist.css"],
 };
