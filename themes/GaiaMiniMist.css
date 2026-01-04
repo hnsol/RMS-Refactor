@@ -192,7 +192,7 @@ ul > li > p, ol > li > p {
 
 code {
   display: inline-block;
-  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
   font-size: 1.0em;
   letter-spacing: 0;
   margin: -0.1em 0.15em;
@@ -296,7 +296,7 @@ section {
   background-image: linear-gradient(135deg, rgba(136, 136, 136, 0), rgba(136, 136, 136, 0.02) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.05));
   color: var(--color-foreground);
   font-size: 32px;
-  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
   height: 720px;
   line-height: 1.35;
   letter-spacing: 1.25px;
