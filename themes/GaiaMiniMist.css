@@ -1,194 +1,427 @@
 @charset "UTF-8";
 /*!
  * Marp / Marpit Gaia theme.
- * Custom-Theme GaiaMiniMist
+ * Customized version for non-coders, BMW Mini like color
  *
  * @theme GaiaMiniMist
  * @author hann-solo
  *
  * @auto-scaling true
- * @size 16:9 1280p
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
  */
-@import "default";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap");
-
-/* =========================
-   Theme: GaiaMiniMist
-   ========================= */
+@import 'https://fonts.bunny.net/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap';
+@import '~highlight.js/styles/sunburst';
+@import url("https://use.fontawesome.com/releases/v5.11.0/css/all.css");
 
 :root {
-  --color-bg: #f6f1e7;
-  --color-fg: #2e2a2a;
-  --color-muted: #6e6a69;
-  --color-accent: #4c4f69;
-  --color-accent-2: #8c8fa1;
-  --color-line: rgba(46, 42, 42, 0.12);
+  /* 1. 基本色の定義 */
 
-  --color-code-bg: rgba(46, 42, 42, 0.06);
-  --color-quote: rgba(76, 79, 105, 0.12);
+  /* ストライプ色 */
+  --stripe-main:   rgba(50, 70, 90, 0.08);
+  --stripe-invert: rgba(230, 230, 230, 0.1);
+  --stripe-gaia:   rgba(150, 180, 220, 0.08);
 
-  --shadow-soft: 0 10px 24px rgba(46, 42, 42, 0.10);
-  --radius: 18px;
+  /* first draft by mikan */
+  --color-white:     #ffffff;
+  --color-dark:      #131820;
+  --color-light:     #f8f7e9;
+  --color-primary:   #1c2a5d;
+  --color-secondary: #459AA6;
+  --color-accent:    #f2bb49;
 
-  --font-sans: "Noto Sans CJK JP", "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
-  --font-serif: "Noto Serif CJK JP", "Noto Serif JP", "Hiragino Mincho ProN", serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* Summar Color Pallette */
+  /* --color-white:     #ffffff;
+  --color-dark:      #173b61;
+  --color-light:     #ffebd0;
+  --color-primary:   #17616e;
+  --color-secondary: #7697a0;
+  --color-accent:    #fd8916; */
 
-  --base-font-size: 38px;
-  --h1-size: 62px;
-  --h2-size: 48px;
-  --h3-size: 40px;
-  --line-height: 1.35;
+  /* blue */
+  /* --color-white:     #ffffff;
+  --color-dark:      #1F2532;
+  --color-light:     #DBFAFC;
+  --color-primary:   #30466D;
+  --color-secondary: #87B4CF;
+  --color-accent:    #E7553E; */
 
-  --slide-padding: 56px;
+    /* Mini like */
+    /* --color-white:     #ffffff;
+    --color-dark:      #0B0E0E;
+    --color-light:     #DDDEDB;
+    --color-primary:   #022146;
+    --color-secondary: #239FA7;
+    --color-accent:    #E98021; */
+  
 }
 
+/* 2. セマンティックカラーの定義 */
 section {
-  background: var(--color-bg);
-  color: var(--color-fg);
-  font-family: var(--font-sans);
-  font-size: var(--base-font-size);
-  line-height: var(--line-height);
-  padding: var(--slide-padding);
+  --color-background: var(--color-white);      /* 背景色 */
+  --color-foreground: var(--color-dark);       /* 文字色 */
+  --color-dimmed:     var(--color-accent);     /* 補助色 */
+  --color-highlight:  var(--color-secondary);  /* ハイライト色 */
+  --color-background-stripe: var(--stripe-main);   /* メインテーマの表ストライプ */
 }
 
-section::after {
-  color: var(--color-muted);
-  font-size: 22px;
+section header, section footer {}
+
+section cite {}
+
+section blockquote {
+  --color-background: var(--color-accent);
 }
 
-h1, h2, h3 {
-  color: var(--color-accent);
-  letter-spacing: 0.02em;
-  margin: 0 0 0.5em 0;
+/* 3. テーマごとの変数上書き */
+
+/* Gaiaテーマ */
+section:where(.gaia) {
+  --color-background: var(--color-primary);
+  --color-foreground: var(--color-light);
+  --color-dimmed:     var(--color-secondary);
+  --color-highlight:  var(--color-accent);
+  --color-background-stripe: var(--stripae-gaia);   /* Gaiaテーマの表ストライプ */
+}
+
+section:where(.gaia) header, section:where(.gaia) footer {}
+
+/* Coverテーマ */
+section:where(.cover) {
+  --color-background: var(--color-secondary);
+  --color-foreground: var(--color-primary);
+  --color-highlight:  var(--color-accent);
+}
+
+/* Referenceテーマ */
+section:where(.reference) {
+  --color-background: var(--color-accent);
+  --color-foreground: var(--color-dark);
+  --color-dimmed:     var(--color-light);
+  --color-highlight:  var(--color-white);
+}
+
+/* Invertテーマ */
+section:where(.invert) {
+  --color-background: var(--color-dark);
+  --color-foreground: var(--color-light);
+  --color-dimmed:     var(--color-primary);
+  --color-highlight:  var(--color-secondary);
+  --color-background-stripe: var(--stripe-invert);
+}
+
+section:where(.invert) header, section:where(.invert) footer {}
+
+/* 4. セクション全体のスタイル */
+
+/* タイポグラフィ */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.5em 0 0;
+}
+
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
+  font-weight: inherit;
+}
+
+h1::part(auto-scaling),
+h2::part(auto-scaling),
+h3::part(auto-scaling),
+h4::part(auto-scaling),
+h5::part(auto-scaling),
+h6::part(auto-scaling) {
+  max-height: 580px;
 }
 
 h1 {
-  font-size: var(--h1-size);
-  font-weight: 800;
-}
+  font-feature-settings: "palt";
+  /* font-size: 1.8em; } */
+  font-size: 2rem;
+  line-height: calc(0.25rem * 12); }
 
 h2 {
-  font-size: var(--h2-size);
-  font-weight: 800;
-}
+  font-feature-settings: "palt";
+  /* font-size: 1.5em; } */
+  font-size: 1.75rem;
+  line-height: calc(0.25rem * 11); }
 
 h3 {
-  font-size: var(--h3-size);
-  font-weight: 700;
+  font-feature-settings: "palt";
+  /* font-size: 1.3em; } */
+  font-size: 1.5rem;
+  line-height: calc(0.25rem * 9); }
+
+h4 {
+  font-feature-settings: "palt";
+  /* font-size: 1.1em; } */
+  font-size: 1.3125rem;
+  line-height: calc(0.25rem * 8); }
+
+h5 {
+  font-feature-settings: "palt";
+  /* font-size: 1em; } */
+  font-size: 1.125rem;
+  line-height: calc(0.25rem * 7); }
+
+h6 {
+  font-feature-settings: "palt";
+  /* font-size: 0.9em; } */
+  font-size: 0.875rem;
+  line-height: calc(0.25rem * 5); }
+
+p, blockquote {
+  font-size: 1rem;
+  line-height: calc(0.25rem * 6);
 }
 
-p {
-  margin: 0.4em 0;
-}
+/* 段落間のバーティカルリズム */
+* + h2 { margin-top: calc(0.25rem * 6); }
+* + h3 { margin-top: calc(0.25rem * 5); }
+* + h4 { margin-top: calc(0.25rem * 4); }
+* + h5 { margin-top: calc(0.25rem * 3); }
+* + h6 { margin-top: calc(0.25rem * 2); }
+* + p  { margin-top: calc(0.25rem * 1); }
 
-strong {
-  font-weight: 800;
-  color: var(--color-accent);
+ul > li, ol > li {
+  /* margin: 0.3em 0 0 0; */
+  margin: 0.25em 0 0 0;
 }
-
-a {
-  color: var(--color-accent);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
-}
-
-ul, ol {
-  margin: 0.5em 0 0.5em 0.9em;
-}
-
-li {
-  margin: 0.25em 0;
-}
-
-hr {
-  border: 0;
-  border-top: 2px solid var(--color-line);
-  margin: 0.9em 0;
-}
-
-blockquote {
-  border-left: 10px solid var(--color-accent-2);
-  padding: 0.5em 0.9em;
-  margin: 0.7em 0;
-  background: var(--color-quote);
-  border-radius: var(--radius);
+ul > li > p, ol > li > p {
+  /* margin: 0.6em 0 0 0; */
+  margin: 0.25em 0 0 0;
 }
 
 code {
-  font-family: var(--font-mono);
-  background: var(--color-code-bg);
-  padding: 0.1em 0.25em;
-  border-radius: 10px;
-  font-size: 0.95em;
+  display: inline-block;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 1.0em;
+  letter-spacing: 0;
+  margin: -0.1em 0.15em;
+  padding: 0.1em 0.2em;
+  vertical-align: baseline;
+  border-radius: 4px; /* 角の丸み */
 }
 
 pre {
-  background: var(--color-code-bg);
-  padding: 0.7em 0.9em;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-  overflow: auto;
+  display: block;
+  margin: 1em 0 0 0;
+  min-height: 1em;
+  overflow: visible;
+  border-radius: 6px; /* 角の丸み */
 }
-
 pre code {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 100%;
+  padding: 0.5em;
+  /* font-size: 0.7em; } */
+  font-size: 1.0em;
+}
+pre::part(auto-scaling) {
+  max-height: calc(580px - 1em);
+}
+
+/* 引用ブロック */
+blockquote {
+  /* margin: 1em 0 0; */
+  margin: 1em 0 0 0;
+  padding: 0 1em;
+  position: relative;
+  /* background: var(--color-dimmed); */
+  background: var(--color-background);
+}
+blockquote::after, blockquote::before {
+  content: "“";
+  display: block;
+  font-family: "Times New Roman", serif;
+  font-weight: bold;
+  /* color: #e6394a; */
+  position: absolute;
+}
+blockquote::before {
+  top: 0;
+  left: 0;
+}
+blockquote::after {
+  right: 0;
+  bottom: 0;
+  transform: rotate(180deg);
+}
+blockquote > *:first-child {
+  margin-top: 0;
+}
+
+mark {
   background: transparent;
-  padding: 0;
-  border-radius: 0;
-  font-size: 0.9em;
 }
 
+/* テーブル */
 table {
-  width: 100%;
+  border-spacing: 0;
   border-collapse: collapse;
-  margin-top: 0.5em;
-  font-size: 0.9em;
+  margin: 1em 0 0 0;
+}
+table th,
+table td {
+  padding: 0.2em 0.4em;
+  border-width: 1px;
+  border-style: solid;
 }
 
-th, td {
-  border-bottom: 2px solid var(--color-line);
-  padding: 0.35em 0.5em;
-  vertical-align: top;
+/* ヘッダー、フッター、セクションのスタイル */
+header, footer, section::after {
+  box-sizing: border-box;
+  font-size: 66%;
+  height: 70px;
+  line-height: 50px;
+  overflow: hidden;
+  padding: 10px 25px;
+  position: absolute;
 }
 
-th {
+header {
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+section {
+  background-color: var(--color-background);
+  background-image: linear-gradient(135deg, rgba(136, 136, 136, 0), rgba(136, 136, 136, 0.02) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.05));
+  color: var(--color-foreground);
+  font-size: 32px;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  height: 720px;
+  line-height: 1.35;
+  letter-spacing: 1.25px;
+  padding: 70px;
+  width: 1280px;
+  word-wrap: break-word;
+}
+
+section::after {
+  right: 0;
+  bottom: 0;
+  font-size: 80%;
+}
+
+section a, section mark {
+  color: var(--color-highlight);
+}
+
+section code {
+  background: var(--color-dimmed);
+  color: var(--color-foreground);
+}
+
+section h1 strong,
+section h2 strong,
+section h3 strong,
+section h4 strong,
+section h5 strong,
+section h6 strong {
+  color: var(--color-highlight);
+}
+
+/* preはコードブロック */
+section pre {
+  /* background: var(--color-foreground); */
+  background: var(--color-dimmed);
+}
+
+section pre > code {
+  background: transparent;
+}
+
+section section::after {
+  color: var(--color-dimmed);
+}
+
+section blockquote::before,
+section blockquote::after {
+  color: var(--color-foreground);
+}
+
+section table th,
+section table td {
+  border-color: var(--color-foreground);
+}
+
+section table thead th {
+  background: var(--color-foreground);
+  color: var(--color-background);
+}
+
+section table tbody > tr:nth-child(odd) td,
+section table tbody > tr:nth-child(odd) th {
+  background: var(--color-background-stripe, transparent);
+}
+
+section > *:first-child,
+section > header:first-child + * {
+  margin-top: 0;
+}
+
+section cite {
+  font-style: normal;
+  font-size: 50%;
+  float: right;
+}
+
+/* リードのスタイル */
+section:where(.lead) {
+  place-content: safe center center;
+  /* Definitions for classic bhavior: Users can adopt flex centering by tweaking style `section.lead { display: flex }` */
+  flex-flow: column nowrap;
+  align-items: stretch;
+  /* stylelint-disable-next-line no-descending-specificity */
+}
+section:where(.lead) h1,
+section:where(.lead) h2,
+section:where(.lead) h3,
+section:where(.lead) h4,
+section:where(.lead) h5,
+section:where(.lead) h6 {
+  text-align: center;
+}
+section:where(.lead) p {
+  text-align: center;
+}
+section:where(.lead) blockquote > h1,
+section:where(.lead) blockquote > h2,
+section:where(.lead) blockquote > h3,
+section:where(.lead) blockquote > h4,
+section:where(.lead) blockquote > h5,
+section:where(.lead) blockquote > h6,
+section:where(.lead) blockquote > p {
   text-align: left;
-  color: var(--color-accent);
-  font-weight: 800;
+}
+section:where(.lead) ul > li > p,
+section:where(.lead) ol > li > p {
+  text-align: left;
+}
+section:where(.lead) table {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-img {
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+/* coverクラスのh2のみ袋文字に */
+section:where(.cover) h2 {
+  text-shadow: 1px 1px 0 var(--color-light),
+  -1px  1px 0 var(--color-light),
+   1px -1px 0 var(--color-light),
+  -1px -1px 0 var(--color-light);
 }
 
-section.title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
-section.title h1 {
-  margin-bottom: 0.25em;
-}
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto; }
 
-section.title p {
-  color: var(--color-muted);
-  font-size: 0.9em;
-}
-
-section.lead {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-section.lead h1 {
-  font-size: calc(var(--h1-size) + 8px);
-}
-
-section.lead p {
-  font-size: 1.05em;
-  color: var(--color-muted);
-}
+/*# sourceMappingURL=gaia.css.map */
