@@ -1,6 +1,6 @@
 # RMS-Refactor
 
-![260104_readme_header](https://github.com/user-attachments/assets/711181d0-25b0-4d29-80f4-e18d8b253bb2)
+![260104_readme_header_rev02](https://github.com/user-attachments/assets/782e4e09-6933-4532-91bf-3be0c2bd3308)
 
 ### Relationship Management Skills: A Modern Guide
 
