@@ -22,6 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # --- Slides (Marp) ---
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -40,6 +41,23 @@ jobs:
           mkdir -p public
           marp slides/rms-mini.md --theme-set ./themes --html -o public/index.html
           marp slides/rms-mini.md --theme-set ./themes --pdf -o public/rms-mini.pdf
+
+      # --- Book (MkDocs) ---
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install MkDocs
+        run: |
+          python -m pip install --upgrade pip
+          # 最小: requirements.txt を作る運用にする場合
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install mkdocs-material; fi
+
+      - name: Build MkDocs
+        run: |
+          # mkdocs.yml と docs/ がある前提
+          mkdocs build -d public/book
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
