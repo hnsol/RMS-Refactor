@@ -2,18 +2,57 @@ site_name: RMS Refactor
 site_url: "https://hnsol.github.io/rms-refactor/book/"
 site_description: "RMS（関係構築型マネジメントスキル）の公開標準版。Webは随時更新。"
 repo_url: "https://github.com/hnsol/rms-refactor"
-nav:
-  - はじめに: index.md
-  - 本編:
-      - 超要約: core/compact/index.md
-      - 基本版: core/standard/index.md
-#  - 注釈: notes/index.md
-#  - 雑記: essay/index.md
 
 theme:
   name: material
+
+plugins:
+  - search
 
 markdown_extensions:
   - admonition
   - toc:
       permalink: true
+  - attr_list
+
+nav:
+  - はじめに: index.md
+
+  - 本編:
+      - 超要約版: core/compact/index.md
+
+      - 標準版:
+          - 概要: core/standard/index.md
+
+          # - 基礎:
+          #     - 概要: core/standard/foundations/index.md
+          #     - 問題解決: core/standard/foundations/problem-solving.md
+          #     - マネージャの役割: core/standard/foundations/manager-role.md
+          #     - コラボレーション: core/standard/foundations/collaboration.md
+
+          - 6つのフェーズ:
+              - フェーズ・スキル・テクニック: core/standard/phases/index.md
+              - ポジショニング: core/standard/phases/positioning.md
+              - ディスカバリング: core/standard/phases/discovering.md
+              - ビルディング: core/standard/phases/building.md
+              - プレゼンティング: core/standard/phases/presenting.md
+              - セキュアリング: core/standard/phases/securing.md
+              - リゾルビング: core/standard/phases/resolving.md
+
+          # - テクニック:
+          # - 概要: core/standard/techniques/index.md
+          # - ラポール形成: core/standard/techniques/rapport.md
+          # - コミュニケーションスタイル: core/standard/techniques/communication-styles.md
+          # - 質問の開閉: core/standard/techniques/questioning-open-close.md
+          # - 仮説思考: core/standard/techniques/hypothesis-thinking.md
+          # - 見積り（アナロジー）: core/standard/techniques/estimation-analogy.md
+          # - Pros/Cons: core/standard/techniques/pros-cons.md
+          # - インパクト×コスト: core/standard/techniques/impact-cost-matrix.md
+          # - アイゼンハワー: core/standard/techniques/eisenhower-matrix.md
+          # - 5W2H: core/standard/techniques/5w2h.md
+          # - 懸念のトリアージ: core/standard/techniques/concern-triage.md
+          # - トレードオフ（時間軸）: core/standard/techniques/tradeoff-time-horizon.md
+
+          # - 補論:
+          # - 概要: core/standard/appendix/index.md
+          # - イシュードリブン: core/standard/appendix/issue-driven.md
