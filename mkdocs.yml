@@ -7,8 +7,8 @@ nav:
   - 本編:
       - 超要約: core/compact/index.md
       - 基本版: core/standard/index.md
-  - 注釈: notes/index.md
-  - 雑記: essay/index.md
+#  - 注釈: notes/index.md
+#  - 雑記: essay/index.md
 
 theme:
   name: material
