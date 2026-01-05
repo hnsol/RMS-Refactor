@@ -1,0 +1,24 @@
+site_name: RMS Notes
+site_url: ""
+site_description: Minimal MkDocs scaffold for RMS notes.
+repo_url: ""
+nav:
+  - Home: index.md
+  - Core:
+      - Overview: core/index.md
+      - Compact: core/compact/index.md
+      - Standard: core/standard/index.md
+  - Notes: notes/index.md
+  - Essay: essay/index.md
+  - Templates:
+      - Core Template: templates/core-template.md
+      - Notes Template: templates/notes-template.md
+      - Essay Template: templates/essay-template.md
+
+theme:
+  name: material
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
