@@ -1,12 +1,11 @@
 site_name: RMS Refactor
 site_url: "https://hnsol.github.io/rms-refactor/book/"
-site_description: "RMS（関係構築型マネジメントスキル）の公開標準ドキュメント。Webは随時更新。"
+site_description: "RMS（関係構築型マネジメントスキル）の公開標準版。Webは随時更新。"
 repo_url: "https://github.com/hnsol/rms-refactor"
 nav:
   - はじめに: index.md
   - 本編:
-      - 概要: core/index.md
-      - 最短版: core/compact/index.md
+      - 超要約: core/compact/index.md
       - 基本版: core/standard/index.md
   - 注釈: notes/index.md
   - 雑記: essay/index.md

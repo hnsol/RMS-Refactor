@@ -1,6 +1,37 @@
 **Layer:** home  
 **Stability:** draft
 
-# RMS Notes
+# RMS公開標準版
 
-Welcome to the minimal MkDocs scaffold. Start from the templates or navigate to the core, notes, and essay sections.
+## はじめに
+
+RMS（Relationship Management Skills / 関係構築型マネジメントスキル）は、持続可能で良好な関係を築き、ともに歩む姿勢を土台にマネジメントするためのスキル体系です。
+
+このサイトは本編・注釈・雑記で構成されています。
+
+- 本編：RMSのメインコンテンツ
+- 注釈：本編を読むにあたっての補助
+- 雑記：試論、考察、AIマネジメントへの応用など
+
+## まず何を読めばよいか？
+
+- RMSに慣れていないかたは：[本編 > 超要約](core/compact/index.md)
+- 使いながら理解を深めたいかたは：[本編 > 基本版](core/standard/index.md)
+- RMSをすでに使っていて深めたいかたは：注釈 / 雑記（作成中です）
+
+## RMSの6つのスキル
+
+| スキル           | 別名       |
+| ---------------- | ---------- |
+| ポジショニング   | 目線あわせ |
+| ディスカバリング | 真因特定   |
+| ビルディング     | 認識あわせ |
+| プレゼンティング | 解決策並べ |
+| セキュアリング   | 行動の合意 |
+| リゾルビング     | 懸念ほぐし |
+
+## 次はこちらをどうぞ
+
+- [本編 > 概要](core/index.md)
+- [本編 > 超要約](core/compact/index.md)
+- [本編 > 基本版](core/standard/index.md)

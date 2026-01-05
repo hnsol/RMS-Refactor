@@ -1,6 +1,26 @@
 **Layer:** core  
 **Stability:** draft
 
-# Core (Standard)
+> 作成中
 
-Use this page for the default, full-length core writeups.
+## 基本版
+
+ここでは、6スキルを「ひとことで」「誤解」「失敗」まで含めて参照できる形にします。
+（将来的には各スキルを独立ページ化する前提の叩き台）
+
+## ポジショニング（目線あわせ）
+
+## ディスカバリング（真因特定）
+
+## ビルディング（認識合わせ）
+
+## プレゼンティング（解決策並べ）
+
+## セキュアリング（行動の合意）
+
+## リゾルビング（懸念ほぐし）
+
+## 図解
+
+![RMS 6つのスキルの関係](https://github.com/user-attachments/assets/a5b8ea73-8b63-408b-ad6a-2970b0e7a0fb)
+
