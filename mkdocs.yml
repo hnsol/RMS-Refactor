@@ -1,19 +1,15 @@
-site_name: RMS Notes
-site_url: ""
-site_description: Minimal MkDocs scaffold for RMS notes.
-repo_url: ""
+site_name: RMS Refactor
+site_url: "https://hnsol.github.io/rms-refactor/book/"
+site_description: "RMS（関係構築型マネジメントスキル）の公開標準ドキュメント。Webは随時更新。"
+repo_url: "https://github.com/hnsol/rms-refactor"
 nav:
-  - Home: index.md
-  - Core:
-      - Overview: core/index.md
-      - Compact: core/compact/index.md
-      - Standard: core/standard/index.md
-  - Notes: notes/index.md
-  - Essay: essay/index.md
-  - Templates:
-      - Core Template: templates/core-template.md
-      - Notes Template: templates/notes-template.md
-      - Essay Template: templates/essay-template.md
+  - はじめに: index.md
+  - 本編:
+      - 概要: core/index.md
+      - 最短版: core/compact/index.md
+      - 基本版: core/standard/index.md
+  - 注釈: notes/index.md
+  - 雑記: essay/index.md
 
 theme:
   name: material
